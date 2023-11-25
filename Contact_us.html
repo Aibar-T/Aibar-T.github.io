@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Characters</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+     integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+    body{
+        background-color: rgb(233, 233, 233);
+    }
+    .navbar {
+      background-color: rgb(54, 59, 63); 
+    }
+    .navbar-dark .navbar-nav .nav-link {
+      color: #ffffff;
+    }
+    .navbar-dark .navbar-nav .nav-link:hover {
+      color: #6c757d;
+    }
+    </style>
+</head>
+<body>
+    
+      <nav class="navbar navbar-expand-lg navbar-dark navbar_constant" style="z-index: 5;">
+        <div class="container">
+          <a class="navbar-brand" href="#">MediaZone</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="HomePage.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Alash_Orda.html">Alash Orda</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Characters.html">Characters</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Quiz.html">Quiz</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Contact_us.html">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="container_4">
+            <div class="col-6">
+               <div class="icon_1 login" data-toggle="modal" data-target="#loginModal"
+                onclick="document.getElementById('loginModal').style.display='block'">
+                 <i class="fas fa-sign-in-alt"></i>
+                 <span class="tooltip_1">Log In</span>
+               </div>
+            </div>
+            <div class="col-6">
+                
+            </div>
+            <div class="col-6">
+                <div class="icon_1 register" data-toggle="modal" data-target="#registerModal"
+                onclick="document.getElementById('registrationModal').style.display='block'">
+                    <i class="fas fa-user-plus"></i>
+                    <span class="tooltip_1">Registration</span>
+                </div>
+            </div>
+        </div>
+
+      </nav>
+
+    <header class="header_img" style="height: auto;">
+             <div class="header_contact_us">
+                <div class="phone_icon"><p>1</p></div>
+                <p class="pText_1" style="padding-top: 10px;">Contact us!</p>
+                <p class="pText_1">If you are interested to ask some questions to MediaZone, 
+                  you can use a phone bellow and call us. we'll pick up the phone quickly</p>
+                <p class="pText_1"><u>+7 771 234 54 64</u></p>
+             </div>
+      </header>
+
+
+    <div id="loginModal" class="modal" style="z-index: 6;">
+        <form class="modal-content animate gradient_1" action="/action_page.php" method="post">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('loginModal').style.display='none'" class="close" title="Close Modal">&times;</span>
+            </div>
+      
+          <div class="container_2">
+            <h1 style="color: white">Log in</h1>
+            <hr class="hr1">
+            <p class="pText_1">Enter data to log in</p>
+            <hr>
+            <label for="uname"><b class="pText_1">Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" required>
+      
+            <label for="psw"><b class="pText_1">Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+              
+            <hr>
+
+            <button type="submit" class="button_1 but" style="margin-right: 20px; color: #cecece;" onclick="playMusic()">Login</button>
+            <label>
+              <input type="checkbox" checked="checked" name="remember" style="margin-right: 10px;"><b class="pText_1">Remember me</b> 
+            </label>
+          </div>
+      
+        </form>
+      </div>
+
+      <div id="registrationModal" class="modal" style="z-index: 6;">
+        <form class="modal-content animate gradient_1" action="/action_page.php" method="post">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('registrationModal').style.display='none'" class="close" title="Close Modal">&times;</span>
+            </div>
+
+            <div class="container_2">
+                <h1 style="color: white">Registration</h1>
+                <hr class="hr1">
+                <p class="pText_1">Fill data to create an account</p>
+                <hr>
+                <label for="uname"><b class="pText_1">Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+          
+                <label for="psw"><b class="pText_1">Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+
+                <label for="psw-repeat"><b class="pText_1">Repeat Password</b></label>
+                <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
+                <hr>
+                <button type="submit" class="registerbtn but" onclick="playMusic()">Register</button>
+              </div>
+
+        </form>
+      </div>
+    
+
+    <nav class="navBasic" style="padding-left: 1%;">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <P class="pText_1">&copy 2023 MediaZone</P>
+                    <div class="social-icons">
+                        <a href="https://www.youtube.com" class="icon youtube" style="color: white; text-decoration: none;">
+                            <i class="fab fa-youtube" style="color: white; text-decoration: none;"></i>
+                        </a>
+                        <a href="https://twitter.com" class="icon twitter" style="color: white; text-decoration: none;">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com" class="icon instagram" style="color: white; text-decoration: none;">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <script>
+     
+    </script>
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="script_final.js"></script>
+</body>
+</html>

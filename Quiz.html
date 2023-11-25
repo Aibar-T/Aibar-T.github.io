@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+     integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+    body{
+        background-image: linear-gradient(rgb(255, 255, 255),rgb(1,1,1));
+    }
+    .navbar {
+      background-color: rgb(54, 63, 54);
+    }
+    .navbar-dark .navbar-nav .nav-link {
+      color: #ffffff;
+    }
+    .navbar-dark .navbar-nav .nav-link:hover {
+      color: #6c757d;
+    }
+    </style>
+</head>
+<body>
+    
+      <nav class="navbar navbar-expand-lg navbar-dark navbar_constant" style="z-index: 5;">
+        <div class="container">
+          <a class="navbar-brand" href="#">MediaZone</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="HomePage.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Alash_Orda.html">Alash Orda</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Characters.html">Characters</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Quiz.html">Quiz</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Contact_us.html">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="container_4">
+            <div class="col-6">
+               <div class="icon_1 login" data-toggle="modal" data-target="#loginModal"
+                onclick="document.getElementById('loginModal').style.display='block'">
+                 <i class="fas fa-sign-in-alt"></i>
+                 <span class="tooltip_1">Log In</span>
+               </div>
+            </div>
+            <div class="col-6">
+                
+            </div>
+            <div class="col-6">
+                <div class="icon_1 register" data-toggle="modal" data-target="#registerModal"
+                onclick="document.getElementById('registrationModal').style.display='block'">
+                    <i class="fas fa-user-plus"></i>
+                    <span class="tooltip_1">Registration</span>
+                </div>
+            </div>
+        </div>
+
+      </nav>
+
+    <header class="header_2" style="height: auto;">
+        <div class="container_2">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="headText_1">Quiz</h1>
+                    <hr class="hr1">
+                    <h3 class="headText_4">Let's check your knowledge about this topic</h3>
+                    <br>
+                </div>
+                  <div class="container_5">
+                    <div class="row">
+                      <div class="col-12">
+                        <p class="pText_1" id="number_of_q">1 of 5 questions</p>
+                        <p id="question" style="font-family: sans-serif; color:rgb(218, 218, 218); text-align: left;">
+                          In what year was Alikhan Bukeikhanov born? (Example input: 1888)</p>
+                        <input type="text" class="q_input">
+                        <button class="q_button button_q" id="button_check">Check and next</button>
+                        <p id="result" class="pText_1"></p>;
+                      </div>
+                    </div>
+                  </div>
+                  <hr class="hr1">;
+                  
+                  
+            </div>
+        </div>
+    </header>
+
+
+    <div id="loginModal" class="modal" style="z-index: 6;">
+        <form class="modal-content animate gradient_1" action="/action_page.php" method="post">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('loginModal').style.display='none'" class="close" title="Close Modal">&times;</span>
+            </div>
+      
+          <div class="container_2">
+            <h1 style="color: white">Log in</h1>
+            <hr class="hr1">
+            <p class="pText_1">Enter data to log in</p>
+            <hr>
+            <label for="uname"><b class="pText_1">Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" required>
+      
+            <label for="psw"><b class="pText_1">Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+              
+            <hr>
+
+            <button type="submit" class="button_1 but" style="margin-right: 20px; color: #cecece;"  onclick="playMusic()">Login</button>
+            <label>
+              <input type="checkbox" checked="checked" name="remember" style="margin-right: 10px;"><b class="pText_1">Remember me</b> 
+            </label>
+          </div>
+      
+        </form>
+      </div>
+
+      <div id="registrationModal" class="modal" style="z-index: 6;">
+        <form class="modal-content animate gradient_1" action="/action_page.php" method="post">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('registrationModal').style.display='none'" class="close" title="Close Modal">&times;</span>
+            </div>
+
+            <div class="container_2">
+                <h1 style="color: white">Registration</h1>
+                <hr class="hr1">
+                <p class="pText_1">Fill data to create an account</p>
+                <hr>
+                <label for="uname"><b class="pText_1">Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+          
+                <label for="psw"><b class="pText_1">Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+
+                <label for="psw-repeat"><b class="pText_1">Repeat Password</b></label>
+                <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
+                <hr>
+                <button type="submit" class="registerbtn but"  onclick="playMusic()">Register</button>
+              </div>
+
+        </form>
+      </div>
+    
+
+    <nav class="navBasic" style="padding-left: 1%;">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <P class="pText_1">&copy 2023 MediaZone</P>
+                    <div class="social-icons">
+                        <a href="https://www.youtube.com" class="icon youtube" style="color: white; text-decoration: none;">
+                            <i class="fab fa-youtube" style="color: white; text-decoration: none;"></i>
+                        </a>
+                        <a href="https://twitter.com" class="icon twitter" style="color: white; text-decoration: none;">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com" class="icon instagram" style="color: white; text-decoration: none;">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <script>
+      let question = 1;
+      let score = 0;   
+      let input=document.querySelector('.q_input');
+      let button=document.querySelector('.q_button');
+      button.onclick=function(){
+        let value = input.value;
+        if (question == 1){
+          if (value == "1866"){
+            question+=1;
+            score+=1;
+            input.value = "";
+            checkQuestion();
+            document.getElementById("question").innerHTML = "Around which newspaper did the base of the party form? (Example input: Paper)";
+          }
+          else{
+            question+=1;
+            input.value = "";
+            checkQuestion();
+            document.getElementById("question").innerHTML = "Around which newspaper did the base of the party form? (Example input: Paper)";
+          }
+        }
+        else if (question == 2){
+          if (value == "Kazakh"){
+            console.log("afsdf")
+            question+=1;
+            score+=1;
+            input.value = "";
+            checkQuestion();
+            document.getElementById("question").innerHTML = "In what year was the February Revolution?";
+          }
+          else{
+            question+=1;
+            input.value = "";
+            checkQuestion();
+            document.getElementById("question").innerHTML = "In what year was the February Revolution?";;
+          }
+        }
+        else if (question == 3){
+          if( value == "1917"){
+            question+=1;
+            score+=1;
+            input.value = "";
+            checkQuestion();
+            document.getElementById("question").innerHTML = "What November was the draft program published? (Example input: 01)";
+          }
+          else {
+            question+=1;
+            input.value = "";
+            checkQuestion();
+            document.getElementById("question").innerHTML = "What November was the draft program published? (Example input: 01)";;
+          }
+          }
+          else if (question == 4){
+            if( value == "21"){
+            question+=1;
+            score+=1;
+            input.value = "";
+            checkQuestion();
+            document.getElementById("question").innerHTML = "In what year did Dulatov begin his political activity?";
+          }
+          else {
+            question+=1;
+            input.value = "";
+            checkQuestion();
+            document.getElementById("question").innerHTML = "In what year did Dulatov begin his political activity?";
+          }
+          }
+          else if (question == 5){
+            if( value == "1905"){
+              button.style.display = 'none';
+            score+=1;
+            input.value = "";
+            checkQuestion();
+            results();
+          }
+          else {
+            button.style.display = 'none';
+            console.log(button.style.display)
+            checkQuestion();
+            results();
+          }
+          }
+        }
+      
+      function results(){
+        let grade;
+        if (score>3){
+          grade = "You did awesome work!"
+        }
+        else{
+          grade = "Try harder!"
+        }
+        document.getElementById("result").innerHTML = score + " of 5. " + grade;
+      }
+      function checkQuestion(){
+        let word_q = " of 5 questions"
+          document.getElementById("number_of_q").innerHTML = question + word_q;
+      }
+     
+    </script>
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="script_final.js"></script>
+</body>
+</html>
